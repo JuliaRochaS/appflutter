@@ -1,0 +1,49 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --target lib\main.dart -d chrome --dart-define=flutter.inspector.structuredErrors=true --start-paused --web-server-debug-protocol ws --web-allow-expose-url --devtools-server-address http://127.0.0.1:9100/ --web-renderer=auto
+
+## exception
+
+StateError: Bad state: Cannot add event after closing
+
+```
+#0      _StreamController.add (dart:async/stream_controller.dart:553:24)
+#1      _StreamSinkWrapper.add (dart:async/stream_controller.dart:826:13)
+#2      AppConnection.runMain (package:dwds/src/connections/app_connection.dart:33:22)
+#3      WebDevFS.connect.<anonymous closure> (package:flutter_tools/src/isolated/devfs_web.dart:669:25)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, 2.2.2, on Microsoft Windows [versÃ£o 6.1.7601], locale pt-BR)
+    • Flutter version 2.2.2 at C:\flutter
+    • Framework revision d79295af24 (10 days ago), 2021-06-11 08:56:01 -0700
+    • Engine revision 91c9fc8fe0
+    • Dart version 2.13.3
+
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    • Android SDK at C:\Users\Usuario\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.3
+    ✗ No Java Development Kit (JDK) found; You must have the environment variable JAVA_HOME set and the java binary in your PATH. You can download the JDK from https://www.oracle.com/technetwork/java/javase/downloads/.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+
+[✓] VS Code (version 1.57.1)
+    • VS Code at C:\Users\Usuario\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.23.0
+
+[✓] Connected device (1 available)
+    • Chrome (web) • chrome • web-javascript • Google Chrome 91.0.4472.114
+
+! Doctor found issues in 2 categories.
+```
